@@ -1,0 +1,32 @@
+<div id="wrapper">
+<div class="container">
+
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+        <h1>MyRugbyUnion</h1>
+        <hr>
+      <h3>Login</h3> 
+      <form (submit)="login()">
+          <div class="form-group">
+            <label for="loginEmail">Email address</label>
+            <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" name="user.email" [(ngModel)]="user.email">
+           
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" class="form-control" id="loginPassword" placeholder="Password" name="user.password" [(ngModel)]="user.password">
+          </div>
+         
+          <button type="submit" class="btn btn-primary"> Submit </button>
+        </form>
+        <hr>
+        <h4>New Player?</h4>
+        <button type="button" class="btn btn-primary" [routerLink]="['/register']">Register</button>
+      
+    </div>
+    <div class="col"></div>
+  </div>
+
+</div>
+</div>

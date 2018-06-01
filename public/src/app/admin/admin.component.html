@@ -1,0 +1,100 @@
+
+<div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">MyRugbyUnion</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>   
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/home']">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/chat']">Chat<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/roster']">Roster<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/schedule']">Schedule<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/dues']">Dues<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/profile']">Profile</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin']">Admin</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  
+  <div id="wrapper">
+        <h3>Add Event to Schedule</h3>
+        <hr>
+        <form (submit)="addEvent()">
+            <div class="form-row">
+              <div class="form-group col-md-8">
+                  <label for="eventName">Title</label>
+                  <input type="text" class="form-control" id="eventName" aria-describedby="emailHelp" placeholder="Event Title" name="event.title" [(ngModel)]="event.title">
+              </div>
+              <div class="form-group col-md-4">
+                  <label for="eventType">Type</label>
+                  <select class="form-control" id="eventType" name="event.type" [(ngModel)]="event.type">
+                    <option selected>Practice</option>
+                    <option>Preseason</option>
+                    <option>League</option>
+                    <option>Playoffs</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="eventLocation">Location</label>
+                    <input type="text" class="form-control" id="eventLocation" aria-describedby="emailHelp" placeholder="Location Name" name="event.location" [(ngModel)]="event.location">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="startTime">Date &amp; Start Time </label>
+                    <input type="datetime-local" class="form-control" id="startTime" name="event.startTime" [(ngModel)]="event.startTime">
+                </div>
+              </div>
+            
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="event.address.street" [(ngModel)]="event.address.street">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity" name="event.address.city" [(ngModel)]="event.address.city">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control" name="event.address.state" [(ngModel)]="event.address.state">
+                  <option selected>CA</option>
+                  <option>NV</option>
+                  <option>AZ</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip" name="event.address.zip" [(ngModel)]="event.address.zip">
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Event</button>
+          </form>
+      
+      </div>
+
+    </div>
+
+    

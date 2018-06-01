@@ -1,0 +1,103 @@
+
+<div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">MyRugbyUnion</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>   
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/home']">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/chat']">Chat<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/roster']">Roster<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/schedule']">Schedule<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/dues']">Dues<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/profile']">Profile</a>
+          </li>
+          <li class="nav-item" *ngIf="authority == 1">
+              <a class="nav-link" [routerLink]="['/admin']">Admin</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+<div id="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-6">
+        <h3>Your Profile</h3>
+        <form (submit)="updateUser()">
+          <div class="form-group">
+            <label for="regFirstName">First Name</label>
+            <input type="text" class="form-control" id="regFirstName" aria-describedby="emailHelp" placeholder="Enter First Name" name="user.firstName" [(ngModel)]="user.firstName">
+
+          </div>
+          <div class="form-group">
+            <label for="regLastName">Last Name</label>
+            <input type="text" class="form-control" id="regLastName" aria-describedby="emailHelp" placeholder="Enter Last Name" name="user.lastName" [(ngModel)]="user.lastName">
+
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Position</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="user.position" [(ngModel)]="user.position">
+              <option>Prop</option>
+              <option>Hooker</option>
+              <option>Lock</option>
+              <option>Flanker</option>
+              <option>8 Man</option>
+              <option>Scrum Half</option>
+              <option>Fly Half </option>
+              <option>Left Wing </option>
+              <option>Inside Center </option>
+              <option>Outside Center </option>
+              <option>Right Wing</option>
+              <option>Full Back</option>
+            </select>
+          </div>
+          <label>Height</label>
+          <div class="row no-gutters spacing">
+            
+            <div class="col">
+             <input id="heightFeet" type="number" class="form-control" placeholder="Feet" name='user.height.feet' [(ngModel)]='user.height.feet'>
+             <span class="labelHeight">FEET</span>
+            </div>
+            <div class="col">
+              <input id="heightFeet" type="number" class="form-control" placeholder="Inches" name='user.height.inches' [(ngModel)]='user.height.inches'>
+              <span class="labelHeight">INCHES</span> </div>
+          </div>
+          
+          <div class="form-group">
+              <label for="weight">Weight</label>
+              <input type="number" class="form-control" id="weight" placeholder="Pounds" name="user.weight" [(ngModel)]="user.weight">
+    
+          </div>
+          <div class="form-group">
+              <label for="date">Date of Birth</label>
+              <input type="date" class="form-control" id="date" name="user.dob" [(ngModel)]="user.dob">
+    
+            </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="col"></div>
+    </div>
+  
+  </div>
+</div>

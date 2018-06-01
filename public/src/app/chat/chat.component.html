@@ -1,0 +1,68 @@
+
+<div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">MyRugbyUnion</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>   
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/home']">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/chat']">Chat<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/roster']">Roster<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/schedule']">Schedule<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/dues']">Dues<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/profile']">Profile</a>
+          </li>
+          <li *ngIf="authority == 1" class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin']">Admin</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+<div class="container">
+<div class="row no-gutters">
+
+    <div class="col-3 d-none d-sm-block border">
+        <div class="user">
+          <h6>Users:</h6>
+          <span *ngIf="users">
+            <p *ngFor="let user of users">{{user}}</p>
+          </span>
+        </div>
+    </div>
+
+  <div class="col">
+    <div class="pre-scrollable chatBox border-right ">
+    <span *ngIf="messages.length > 0">
+
+        <div *ngFor="let msg of messages" class="font-weight-light align-text-bottom ">{{msg}}</div>
+
+    </span>
+
+  </div>
+  <form (submit)="sendMessage()">
+      <input type="text" class="form-control" name="message" [(ngModel)]="message">
+      <input type="submit" class="btn btn-primary" value="Send">
+  </form>
+  </div>
+</div>
+</div>

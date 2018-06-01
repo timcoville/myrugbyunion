@@ -1,0 +1,50 @@
+
+#wrapper {
+    padding: 20px 0 ;
+}
+
+#wrapper h4 {
+    padding: 20px 0;
+}
+
+.dark{
+    background-color: #ffffff;
+    min-height: 425px;
+    padding-top: 25px;
+}
+
+.height {
+    min-height: 425px;
+}
+.jumbotron {
+    margin-bottom: 0;
+}
+
+.reduce {
+    font-size: .8em;
+    margin-left: 3px;
+}
+
+.white {
+    color: #474747;
+}
+
+/* @include media-breakpoint-up(xs) { ... }
+@include media-breakpoint-up(sm) { ... }
+@include media-breakpoint-up(md) { ... }
+@include media-breakpoint-up(lg) { ... }
+@include media-breakpoint-up(xl) { ... }
+
+// Example usage: */
+
+/* @include media-breakpoint-up(sm) {
+    .hide-chat{
+        display:hidden;
+    }
+} */
+
+/* @media (min-width: 576px) { 
+    .hide-chat{
+        display:hidden;
+    }
+ } */

@@ -1,0 +1,71 @@
+<div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+          <a class="navbar-brand" href="#">MyRugbyUnion</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>   
+      
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/home']">Home<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/chat']">Chat<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/roster']">Roster<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/schedule']">Schedule<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/dues']">Dues<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/profile']">Profile</a>
+              </li>
+              <li *ngIf="authority == 1" class="nav-item">
+                  <a class="nav-link" [routerLink]="['/admin']">Admin</a>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link" (click)="logout()">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    
+<div class='container'>
+  
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-4">
+      <br>
+        <h2>Pay Dues</h2>
+        <hr>
+   <!--  <form novalidate (ngSubmit)="buy($event)" [formGroup]="stripeTest">
+      <input type="text" formControlName="name" placeholder="Jane Doe">
+      <div id="card-element" class="field"></div>
+      <button class="btn btn-primary btn-lg" type="submit">
+        BUY
+      </button>
+    </form> -->
+  </div>
+  <div class="col"></div>
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- let creditCardParams = {
+  customerId,
+  number: '4111111111111111',
+  expirationDate: '06/2022',
+  cvv: '100'
+};
+ -->

@@ -1,0 +1,19 @@
+#wrapper {
+    margin: 30px;
+}
+
+#heightFeet {
+    width: 60%;
+display:inline-block;
+}
+
+.labelHeight {
+   margin: 8px 0 0 10px;
+   font-size: .8em;
+   display: inline-block;
+
+}
+
+.spacing {
+    margin-bottom: 10px;
+}

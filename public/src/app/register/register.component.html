@@ -1,0 +1,41 @@
+<div id="wrapper">
+
+  <div class="container">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-6">
+          <h1>MyRugbyUnion</h1>
+          <hr>
+        <h3>Registration</h3>
+        <form (submit)="register()">
+          <div class="form-group">
+            <label for="regFirstName">First Name</label>
+            <input type="email" class="form-control" id="regFirstName" aria-describedby="emailHelp" placeholder="Enter First Name" name="newUser.firstName" [(ngModel)]="newUser.firstName">
+
+          </div>
+          <div class="form-group">
+            <label for="regLastName">Last Name</label>
+            <input type="email" class="form-control" id="regLastName" aria-describedby="emailHelp" placeholder="Enter Last Name" name="newUser.lastName" [(ngModel)]="newUser.lastName">
+
+          </div>
+          <div class="form-group">
+            <label for="regEmail">Email address</label>
+            <input type="email" class="form-control" id="regEmail" aria-describedby="emailHelp" placeholder="Enter email" name="newUser.email" [(ngModel)]="newUser.email">
+
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Password</label>
+            <input type="password" class="form-control" id="regPassword" placeholder="Enter Password" name="newUser.password" [(ngModel)]="newUser.password">
+          </div>
+          <div class="form-group">
+            <label for="regConfPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="regConfPassword" placeholder="Confirm Password" name="newUser.cPassword" [(ngModel)]="newUser.cPassword">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+
+</div>  
